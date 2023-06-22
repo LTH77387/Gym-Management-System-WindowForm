@@ -76,6 +76,10 @@ namespace GymManagementSystem
                         }
 
                     }
+                    else
+                    {
+                        MessageBox.Show("Login Fail!","Warning Status!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
 
                     // close the connection
                     conn.Close();

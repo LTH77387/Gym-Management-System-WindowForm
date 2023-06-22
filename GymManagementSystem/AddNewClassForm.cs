@@ -81,6 +81,7 @@ namespace GymManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // validation
             if(cboTrainer.Text == "")
             {
                 chooseTrainerErr.Text = "Please choose trainer name.";
@@ -139,6 +140,8 @@ namespace GymManagementSystem
                 {
                     MessageBox.Show(ex.Message);
                 }
+
+                // inert into classes db case
                 try
                 {
                     conn.Open();
@@ -153,6 +156,8 @@ namespace GymManagementSystem
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     DialogResult result = MessageBox.Show("Class Created!", "Success Message!", MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                    // press ok and clear all the form input fields
                     if (result == DialogResult.OK)
                     {
                         cboTrainer.SelectedIndex = -1;
@@ -160,7 +165,7 @@ namespace GymManagementSystem
                         txtCategory.Text = string.Empty;
                         txtVenue.Text = string.Empty;
                         txtNumberOfSessions.Text = string.Empty;
-                        dtpStartDate.Value = DateTime.Now;
+                        dtpStartDate.Value = DateTime.Now; // default by current date
                         dtpEndDate.Value = DateTime.Now;
                     }
                 }catch(Exception ex)

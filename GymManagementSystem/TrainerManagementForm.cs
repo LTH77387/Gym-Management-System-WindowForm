@@ -68,11 +68,14 @@ namespace GymManagementSystem
                         DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
                         editButtonColumn.Text = "Edit";
                         editButtonColumn.UseColumnTextForButtonValue = true;
+                        // Set the button column's cell style to have a green background color
+                        editButtonColumn.DefaultCellStyle.BackColor = Color.Green;
                         dataGridView1.Columns.Add(editButtonColumn);
 
                         DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
                         deleteButtonColumn.Text = "Delete";
                         deleteButtonColumn.UseColumnTextForButtonValue = true;
+                        deleteButtonColumn.DefaultCellStyle.BackColor = Color.Red;
                         dataGridView1.Columns.Add(deleteButtonColumn);
                     }
 
@@ -129,7 +132,11 @@ namespace GymManagementSystem
 
                 conn.Close();
 
-                fetchTrainerData("Delete_Trainer");
+                DialogResult dialogResult = MessageBox.Show("Trainer Deleted!","Information!",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.OK)
+                {
+                    fetchTrainerData("Delete_Trainer");
+                }
             }
         }
     }

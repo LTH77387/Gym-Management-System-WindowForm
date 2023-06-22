@@ -46,7 +46,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Cambria", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.Location = new Point(764, 88);
+            linkLabel1.Location = new Point(860, 100);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(213, 20);
             linkLabel1.TabIndex = 24;
@@ -59,7 +59,7 @@
             txtPhoneNumberErr.AutoSize = true;
             txtPhoneNumberErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtPhoneNumberErr.ForeColor = Color.Red;
-            txtPhoneNumberErr.Location = new Point(888, 470);
+            txtPhoneNumberErr.Location = new Point(984, 482);
             txtPhoneNumberErr.Name = "txtPhoneNumberErr";
             txtPhoneNumberErr.Size = new Size(52, 17);
             txtPhoneNumberErr.TabIndex = 23;
@@ -70,7 +70,7 @@
             txtAddressErr.AutoSize = true;
             txtAddressErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAddressErr.ForeColor = Color.Red;
-            txtAddressErr.Location = new Point(888, 372);
+            txtAddressErr.Location = new Point(984, 384);
             txtAddressErr.Name = "txtAddressErr";
             txtAddressErr.Size = new Size(52, 17);
             txtAddressErr.TabIndex = 22;
@@ -81,7 +81,7 @@
             txtTrainerNameErr.AutoSize = true;
             txtTrainerNameErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtTrainerNameErr.ForeColor = Color.Red;
-            txtTrainerNameErr.Location = new Point(888, 280);
+            txtTrainerNameErr.Location = new Point(984, 292);
             txtTrainerNameErr.Name = "txtTrainerNameErr";
             txtTrainerNameErr.Size = new Size(52, 17);
             txtTrainerNameErr.TabIndex = 21;
@@ -90,7 +90,7 @@
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.LightSlateGray;
-            btnUpdate.Location = new Point(988, 507);
+            btnUpdate.Location = new Point(1084, 519);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(100, 44);
             btnUpdate.TabIndex = 20;
@@ -100,21 +100,21 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(888, 325);
+            txtAddress.Location = new Point(984, 337);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(200, 27);
             txtAddress.TabIndex = 19;
             // 
             // txtTrainerName
             // 
-            txtTrainerName.Location = new Point(888, 237);
+            txtTrainerName.Location = new Point(984, 249);
             txtTrainerName.Name = "txtTrainerName";
             txtTrainerName.Size = new Size(200, 27);
             txtTrainerName.TabIndex = 18;
             // 
             // txtPhoneNumber
             // 
-            txtPhoneNumber.Location = new Point(888, 421);
+            txtPhoneNumber.Location = new Point(984, 433);
             txtPhoneNumber.Name = "txtPhoneNumber";
             txtPhoneNumber.Size = new Size(200, 27);
             txtPhoneNumber.TabIndex = 17;
@@ -122,7 +122,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(764, 421);
+            label4.Location = new Point(860, 433);
             label4.Name = "label4";
             label4.Size = new Size(111, 20);
             label4.TabIndex = 16;
@@ -131,7 +131,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(764, 332);
+            label3.Location = new Point(860, 344);
             label3.Name = "label3";
             label3.Size = new Size(65, 20);
             label3.TabIndex = 15;
@@ -140,7 +140,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(764, 244);
+            label2.Location = new Point(860, 256);
             label2.Name = "label2";
             label2.Size = new Size(101, 20);
             label2.TabIndex = 14;
@@ -150,7 +150,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(788, 142);
+            label1.Location = new Point(884, 154);
             label1.Name = "label1";
             label1.Size = new Size(252, 52);
             label1.TabIndex = 13;

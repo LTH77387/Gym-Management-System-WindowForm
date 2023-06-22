@@ -52,11 +52,14 @@ namespace GymManagementSystem
                         DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
                         editButtonColumn.Text = "Edit";
                         editButtonColumn.UseColumnTextForButtonValue = true;
+                        // Set the button column's cell style to have a green background color
+                        editButtonColumn.DefaultCellStyle.BackColor = Color.Green;
                         dataGridView1.Columns.Add(editButtonColumn);
 
                         DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
                         deleteButtonColumn.Text = "Delete";
                         deleteButtonColumn.UseColumnTextForButtonValue = true;
+                        deleteButtonColumn.DefaultCellStyle.BackColor = Color.Red;
                         dataGridView1.Columns.Add(deleteButtonColumn);
                     }
 
@@ -108,17 +111,27 @@ namespace GymManagementSystem
 
             if (result == DialogResult.Yes)
             {
-                conn.Open();
+                try
+                {
+                    conn.Open();
 
-                SqlCommand cmd = new SqlCommand("DELETE FROM [User] WHERE User_ID=@userID", conn);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Users WHERE User_ID=@userID", conn);
 
-                cmd.Parameters.AddWithValue("@userID", userID);
+                    cmd.Parameters.AddWithValue("@userID", userID);
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                conn.Close();
-
-                fetchUserData("Delete_Trainer");
+                    conn.Close();
+                    DialogResult dialogResult = MessageBox.Show("Class Deleted!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        fetchUserData("Delete_Trainer");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

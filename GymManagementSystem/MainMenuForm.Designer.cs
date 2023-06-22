@@ -66,6 +66,7 @@
             memberManagementToolStripMenuItem.Name = "memberManagementToolStripMenuItem";
             memberManagementToolStripMenuItem.Size = new Size(171, 24);
             memberManagementToolStripMenuItem.Text = "Member Management";
+            memberManagementToolStripMenuItem.Click += memberManagementToolStripMenuItem_Click;
             // 
             // trainerManagementToolStripMenuItem
             // 
@@ -86,6 +87,7 @@
             enrollmentManagementToolStripMenuItem.Name = "enrollmentManagementToolStripMenuItem";
             enrollmentManagementToolStripMenuItem.Size = new Size(187, 24);
             enrollmentManagementToolStripMenuItem.Text = "Enrollment Management";
+            enrollmentManagementToolStripMenuItem.Click += enrollmentManagementToolStripMenuItem_Click;
             // 
             // userManagementToolStripMenuItem
             // 

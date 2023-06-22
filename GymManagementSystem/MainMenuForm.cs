@@ -54,5 +54,19 @@ namespace GymManagementSystem
             adminProfileEdit.Show();
             this.Hide();
         }
+
+        private void enrollmentManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EnrollmentManagementForm enrollmentManagementForm = new EnrollmentManagementForm();
+            enrollmentManagementForm.Show();
+            this.Hide();
+        }
+
+        private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MemberManagementForm memberManagementForm = new MemberManagementForm();
+            memberManagementForm.Show();
+            this.Hide();
+        }
     }
 }

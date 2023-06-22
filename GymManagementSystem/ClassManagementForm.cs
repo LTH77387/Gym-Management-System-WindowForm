@@ -38,6 +38,8 @@ namespace GymManagementSystem
         {
             fetchClassData("FormLoad");
         }
+
+        // select classes data
         private void fetchClassData(string methodName)
         {
             try
@@ -80,19 +82,26 @@ namespace GymManagementSystem
             if(e.ColumnIndex == 8)
             {
                 // edit case
-                int classID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                int trainerID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-                string title = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string category = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                string venue = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                string number_of_sessions = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                string start_date = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                string end_date = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                try
+                {
+                    int classID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    int trainerID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    string title = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    string category = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    string venue = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    string number_of_sessions = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    string start_date = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string end_date = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
 
-                // call the edit form and pass all the arguments 
-                EditClassForm editClassForm = new EditClassForm(classID,trainerID,title,category,venue,number_of_sessions,start_date,end_date);
-                editClassForm.Show();
-                this.Hide();
+                    // call the edit form and pass all the arguments 
+                    EditClassForm editClassForm = new EditClassForm(classID, trainerID, title, category, venue, number_of_sessions, start_date, end_date);
+                    editClassForm.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show (ex.Message);
+                }
             }
             else if(e.ColumnIndex == 9)
             {
@@ -101,24 +110,35 @@ namespace GymManagementSystem
                 Class_Delete(id);
             }
         }
+        
+        // delete method
         private void Class_Delete(int id)
         {
             DialogResult result = MessageBox.Show("Are you sure to delete this class?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                try
+                {
+                    conn.Open();
 
-                conn.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Classes WHERE Class_ID=@classID", conn);
 
-                SqlCommand cmd = new SqlCommand("DELETE FROM Classes WHERE Class_ID=@classID", conn);
+                    cmd.Parameters.AddWithValue("@classID", id);
 
-                cmd.Parameters.AddWithValue("@classID", id);
+                    cmd.ExecuteNonQuery();
 
-                cmd.ExecuteNonQuery();
-
-                conn.Close();
-
-                fetchClassData("Delete_Class");
+                    conn.Close();
+                    DialogResult dialogResult = MessageBox.Show("Class Deleted!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        fetchClassData("Delete_Class");  // call the fetch method again in order to update the view data
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
