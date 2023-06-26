@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUserForm));
             linkLabel1 = new LinkLabel();
             txtRoleErr = new Label();
             txtPasswordErr = new Label();
@@ -173,6 +174,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditUserForm";
             Text = "EditUserForm";
             FormClosed += EditUserForm_FormClosed;

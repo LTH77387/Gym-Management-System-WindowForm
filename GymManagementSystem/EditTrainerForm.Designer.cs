@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTrainerForm));
             linkLabel1 = new LinkLabel();
             txtPhoneNumberErr = new Label();
             txtAddressErr = new Label();
@@ -173,6 +174,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditTrainerForm";
             Text = "EditTrainerForm";
             FormClosed += EditTrainerForm_FormClosed;

@@ -128,7 +128,7 @@ namespace GymManagementSystem
                         fetchUserData("Delete_Trainer");
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

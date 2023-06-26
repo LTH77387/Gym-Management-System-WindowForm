@@ -49,7 +49,16 @@
     <Compile Update="TrainerManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UserChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserEnrollmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

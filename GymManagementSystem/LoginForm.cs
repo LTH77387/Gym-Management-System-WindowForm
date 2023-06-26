@@ -58,7 +58,7 @@ namespace GymManagementSystem
                     if (dataTable.Rows.Count > 0)
                     {
                         int userID = Convert.ToInt32(dataTable.Rows[0]["User_ID"]);
-                        LoginClass.UserID= userID;
+                        LoginClass.UserID = userID;
                         string role = Convert.ToString(dataTable.Rows[0]["Role"]);
 
                         //test the authenticated user is admin or not
@@ -78,7 +78,7 @@ namespace GymManagementSystem
                     }
                     else
                     {
-                        MessageBox.Show("Login Fail!","Warning Status!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Login Fail!", "Warning Status!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     // close the connection

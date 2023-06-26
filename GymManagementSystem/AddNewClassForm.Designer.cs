@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewClassForm));
             label1 = new Label();
             linkLabel1 = new LinkLabel();
             dtpEndDate = new DateTimePicker();
@@ -306,6 +307,7 @@
             Controls.Add(label2);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddNewClassForm";
             Text = "AddNewClassForm";
             FormClosed += AddNewClassForm_FormClosed;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             btnRegister = new Button();
             label3 = new Label();
             label2 = new Label();
@@ -138,6 +139,7 @@
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RegisterForm";
             Text = "RegisterForm";
             Load += RegisterForm_Load;

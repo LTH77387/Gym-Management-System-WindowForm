@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnrollmentManagementForm));
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -54,6 +55,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EnrollmentManagementForm";
             Text = "EnrollmentManagementForm";
             FormClosed += EnrollmentManagementForm_FormClosed;

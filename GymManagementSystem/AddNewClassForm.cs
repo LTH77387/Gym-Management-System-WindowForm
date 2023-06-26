@@ -82,37 +82,37 @@ namespace GymManagementSystem
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // validation
-            if(cboTrainer.Text == "")
+            if (cboTrainer.Text == "")
             {
                 chooseTrainerErr.Text = "Please choose trainer name.";
                 chooseTrainerErr.Show();
             }
-            if(txtTitle.Text == "")
+            if (txtTitle.Text == "")
             {
                 txtTitleErr.Text = "Title cannot be empty.";
                 txtTitleErr.Show();
             }
-            if(txtCategory.Text == "")
+            if (txtCategory.Text == "")
             {
                 txtCategoryErr.Text = "Category cannot be empty.";
                 txtCategoryErr.Show();
             }
-            if(txtVenue.Text == "")
+            if (txtVenue.Text == "")
             {
                 txtVenueErr.Text = "Venue cannot be empty.";
                 txtVenueErr.Show();
             }
-            if(txtNumberOfSessions.Text == "")
+            if (txtNumberOfSessions.Text == "")
             {
                 txtNumberOfSessionsErr.Text = "Number of sessions cannot be empty.";
                 txtNumberOfSessionsErr.Show();
             }
-            if(dtpStartDate.Text == "")
+            if (dtpStartDate.Text == "")
             {
                 startDateErr.Text = "Start Date cannot be empty.";
                 startDateErr.Show();
             }
-            if(dtpEndDate.Text == "")
+            if (dtpEndDate.Text == "")
             {
                 endDateErr.Text = "End Date cannot be empty.";
                 endDateErr.Show();
@@ -120,7 +120,7 @@ namespace GymManagementSystem
 
             // if validation fine
             // search and fetch the trainer id respective to the trainer name selected
-            if(cboTrainer.Text != "" && txtTitle.Text != "" && txtCategory.Text != "" && txtVenue.Text != "" && txtNumberOfSessions.Text != "" && dtpStartDate.Text != "" && dtpEndDate.Text != "")
+            if (cboTrainer.Text != "" && txtTitle.Text != "" && txtCategory.Text != "" && txtVenue.Text != "" && txtNumberOfSessions.Text != "" && dtpStartDate.Text != "" && dtpEndDate.Text != "")
             {
                 try
                 {
@@ -136,7 +136,7 @@ namespace GymManagementSystem
                         this.selectedTrainerID = Convert.ToInt32(dataTable.Rows[0]["Trainer_ID"]);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -145,17 +145,17 @@ namespace GymManagementSystem
                 try
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Classes (Trainer_ID,Title,Category,Venue,Number_of_Sessions,Start_Date,End_Date) VALUES (@trainerID,@title,@category,@venue,@number_of_sessions,@start_date,@end_date)",conn);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Classes (Trainer_ID,Title,Category,Venue,Number_of_Sessions,Start_Date,End_Date) VALUES (@trainerID,@title,@category,@venue,@number_of_sessions,@start_date,@end_date)", conn);
                     cmd.Parameters.AddWithValue("@trainerID", this.selectedTrainerID);
-                    cmd.Parameters.AddWithValue("@title",txtTitle.Text);
+                    cmd.Parameters.AddWithValue("@title", txtTitle.Text);
                     cmd.Parameters.AddWithValue("@category", txtCategory.Text);
-                    cmd.Parameters.AddWithValue("@venue",txtVenue.Text);
-                    cmd.Parameters.AddWithValue("@number_of_sessions",txtNumberOfSessions.Text);
+                    cmd.Parameters.AddWithValue("@venue", txtVenue.Text);
+                    cmd.Parameters.AddWithValue("@number_of_sessions", txtNumberOfSessions.Text);
                     cmd.Parameters.AddWithValue("@start_date", dtpStartDate.Value);
-                    cmd.Parameters.AddWithValue("@end_date",dtpEndDate.Value);
+                    cmd.Parameters.AddWithValue("@end_date", dtpEndDate.Value);
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    DialogResult result = MessageBox.Show("Class Created!", "Success Message!", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("Class Created!", "Success Message!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // press ok and clear all the form input fields
                     if (result == DialogResult.OK)
@@ -168,7 +168,8 @@ namespace GymManagementSystem
                         dtpStartDate.Value = DateTime.Now; // default by current date
                         dtpEndDate.Value = DateTime.Now;
                     }
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagementForm));
             dataGridView1 = new DataGridView();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -67,6 +68,7 @@
             ClientSize = new Size(1924, 1055);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UserManagementForm";
             Text = "UserManagementForm";
             FormClosed += UserManagementForm_FormClosed;

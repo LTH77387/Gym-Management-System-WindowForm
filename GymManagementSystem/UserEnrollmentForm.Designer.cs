@@ -1,6 +1,6 @@
 ﻿namespace GymManagementSystem
 {
-    partial class MemberManagementForm
+    partial class UserEnrollmentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,53 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberManagementForm));
-            dataGridView1 = new DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserEnrollmentForm));
             label1 = new Label();
+            dataGridView1 = new DataGridView();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 25.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(796, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(471, 52);
+            label1.TabIndex = 1;
+            label1.Text = "Enroll our Gym Classes";
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 142);
+            dataGridView1.Location = new Point(30, 143);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.ShowCellErrors = false;
-            dataGridView1.ShowCellToolTips = false;
-            dataGridView1.Size = new Size(1887, 646);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.Size = new Size(1849, 609);
+            dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // label1
+            // iconButton1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cambria", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(779, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(350, 40);
-            label1.TabIndex = 10;
-            label1.Text = "Member Management";
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(30, 56);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(100, 44);
+            iconButton1.TabIndex = 88;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
-            // MemberManagementForm
+            // UserEnrollmentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
-            Controls.Add(label1);
+            Controls.Add(iconButton1);
             Controls.Add(dataGridView1);
+            Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "MemberManagementForm";
-            Text = "MemberManagementForm";
-            FormClosed += MemberManagementForm_FormClosed;
-            Load += MemberManagementForm_Load;
+            Name = "UserEnrollmentForm";
+            Text = "UserEnrollmentForm";
+            FormClosed += UserEnrollmentForm_FormClosed;
+            Load += UserEnrollmentForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -82,7 +92,8 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
         private Label label1;
+        private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

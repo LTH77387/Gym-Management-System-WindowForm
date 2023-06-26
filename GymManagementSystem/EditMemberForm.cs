@@ -59,27 +59,27 @@ namespace GymManagementSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // validation
-            if(txtName.Text == "")
+            if (txtName.Text == "")
             {
                 txtNameErr.Text = "Name cannot be empty.";
                 txtNameErr.Show();
             }
-            if(txtEmail.Text == "")
+            if (txtEmail.Text == "")
             {
                 txtEmailErr.Text = "Email cannot be empty.";
                 txtEmailErr.Show();
             }
-            if( txtPassword.Text == "")
+            if (txtPassword.Text == "")
             {
                 txtPasswordErr.Text = "Password cannot be empty.";
                 txtPasswordErr.Show();
             }
-            if(txtAddress.Text == "")
+            if (txtAddress.Text == "")
             {
                 txtAddressErr.Text = "Address cannot be empty.";
                 txtAddressErr.Show();
             }
-            if(txtName.Text != "" && txtEmail.Text != "" && txtPassword.Text != "" && txtAddress.Text != "")
+            if (txtName.Text != "" && txtEmail.Text != "" && txtPassword.Text != "" && txtAddress.Text != "")
             {
                 try
                 {
@@ -101,7 +101,8 @@ namespace GymManagementSystem
                         this.Hide();
                     }
                 }
-                catch(Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                 }
             }

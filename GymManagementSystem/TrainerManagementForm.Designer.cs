@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainerManagementForm));
             dataGridView1 = new DataGridView();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -68,6 +69,7 @@
             ClientSize = new Size(1924, 1055);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TrainerManagementForm";
             Text = "TrainerManagementForm";
             FormClosed += TrainerManagementForm_FormClosed;

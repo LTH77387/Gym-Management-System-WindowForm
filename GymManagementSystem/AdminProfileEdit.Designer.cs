@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminProfileEdit));
             txtUserName = new TextBox();
             txtPassword = new TextBox();
             label4 = new Label();
@@ -126,6 +127,7 @@
             Controls.Add(label4);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminProfileEdit";
             Text = "AdminProfileEdit";
             FormClosed += AdminProfileEdit_FormClosed;

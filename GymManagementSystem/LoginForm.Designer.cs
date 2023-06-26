@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             label1 = new Label();
             txtUserName = new TextBox();
             txtPassword = new TextBox();
@@ -138,6 +139,7 @@
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginForm";
             Text = "Login Form";
             FormClosed += LoginForm_FormClosed;

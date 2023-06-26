@@ -24,7 +24,7 @@ namespace GymManagementSystem
         {
             fetchMemberData("FormLoad");
         }
-        
+
         // get all the member data 
         private void fetchMemberData(string methodName)
         {
@@ -40,7 +40,7 @@ namespace GymManagementSystem
                 if (dataTable.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dataTable;
-                    if(methodName== "FormLoad")
+                    if (methodName == "FormLoad")
                     {
                         // Add columns to the DataGridView            
                         DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
@@ -73,22 +73,22 @@ namespace GymManagementSystem
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 6)
+            if (e.ColumnIndex == 6)
             {
                 // edit case
                 int memberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                string name= dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string email = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string password = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString(); 
+                string password = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string address = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                string joinDate = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString(); 
+                string joinDate = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
 
                 // redirect to member edit form
-                EditMemberForm editMemberForm = new EditMemberForm(memberID,name,email, password, address,joinDate); 
+                EditMemberForm editMemberForm = new EditMemberForm(memberID, name, email, password, address, joinDate);
                 editMemberForm.Show();
                 this.Hide();
             }
-            else if(e.ColumnIndex == 7)
+            else if (e.ColumnIndex == 7)
             {
                 // delete case
                 int memberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -98,7 +98,7 @@ namespace GymManagementSystem
         private void Member_Delete(int memberID)
         {
             DialogResult result = MessageBox.Show("Do you want to delete this memebr?", "Alert!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 // run delete query
                 conn.Open();
@@ -107,7 +107,7 @@ namespace GymManagementSystem
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 DialogResult result1 = MessageBox.Show("Member Deleted!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if(result1 == DialogResult.OK)
+                if (result1 == DialogResult.OK)
                 {
                     fetchMemberData("DeleteForm"); // call the fetch method again in order to view the updated data
                 }

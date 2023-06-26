@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
             menuStrip1 = new MenuStrip();
             memberManagementToolStripMenuItem = new ToolStripMenuItem();
@@ -109,6 +110,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "MainMenuForm";
             Text = "MainMenuForm";

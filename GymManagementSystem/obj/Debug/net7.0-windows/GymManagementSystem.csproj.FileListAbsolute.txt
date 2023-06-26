@@ -39,3 +39,6 @@ C:\Users\ASUS\Desktop\IT assignments\COS 210\Linn Thit Htoo\GymManagementSystem\
 C:\Users\ASUS\Desktop\IT assignments\COS 210\Linn Thit Htoo\GymManagementSystem\GymManagementSystem\obj\Debug\net7.0-windows\GymManagementSystem.EnrollmentManagementForm.resources
 C:\Users\ASUS\Desktop\IT assignments\COS 210\Linn Thit Htoo\GymManagementSystem\GymManagementSystem\obj\Debug\net7.0-windows\GymManagementSystem.MemberManagementForm.resources
 C:\Users\ASUS\Desktop\IT assignments\COS 210\Linn Thit Htoo\GymManagementSystem\GymManagementSystem\obj\Debug\net7.0-windows\GymManagementSystem.EditMemberForm.resources
+C:\Users\ASUS\Desktop\IT assignments\COS 210\Linn Thit Htoo\GymManagementSystem\GymManagementSystem\obj\Debug\net7.0-windows\GymManagementSystem.UserSettingForm.resources
+C:\Users\ASUS\Desktop\IT assignments\COS 210\Linn Thit Htoo\GymManagementSystem\GymManagementSystem\obj\Debug\net7.0-windows\GymManagementSystem.UserChangePasswordForm.resources
+C:\Users\ASUS\Desktop\IT assignments\COS 210\Linn Thit Htoo\GymManagementSystem\GymManagementSystem\obj\Debug\net7.0-windows\GymManagementSystem.UserEnrollmentForm.resources

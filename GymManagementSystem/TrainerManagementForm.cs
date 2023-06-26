@@ -132,7 +132,7 @@ namespace GymManagementSystem
 
                 conn.Close();
 
-                DialogResult dialogResult = MessageBox.Show("Trainer Deleted!","Information!",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("Trainer Deleted!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (dialogResult == DialogResult.OK)
                 {
                     fetchTrainerData("Delete_Trainer");

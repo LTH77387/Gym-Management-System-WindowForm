@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditClassForm));
             dtpEndDate = new DateTimePicker();
             dtpStartDate = new DateTimePicker();
             chooseTrainerErr = new Label();
@@ -306,6 +307,7 @@
             Controls.Add(label2);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditClassForm";
             Text = "EditClassForm";
             FormClosed += EditClassForm_FormClosed;

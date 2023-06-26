@@ -79,7 +79,7 @@ namespace GymManagementSystem
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 8)
+            if (e.ColumnIndex == 8)
             {
                 // edit case
                 try
@@ -100,17 +100,17 @@ namespace GymManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show (ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
             }
-            else if(e.ColumnIndex == 9)
+            else if (e.ColumnIndex == 9)
             {
                 // delete case
                 int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Class_Delete(id);
             }
         }
-        
+
         // delete method
         private void Class_Delete(int id)
         {

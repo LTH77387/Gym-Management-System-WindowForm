@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMemberForm));
             txtNameErr = new Label();
             dtpJoinDateErr = new Label();
             label10 = new Label();
@@ -241,6 +242,7 @@
             Controls.Add(label2);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditMemberForm";
             Text = "EditMemberForm";
             Load += EditMemberForm_Load;
