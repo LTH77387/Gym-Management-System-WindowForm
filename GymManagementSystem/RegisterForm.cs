@@ -18,6 +18,15 @@ namespace GymManagementSystem
             InitializeComponent();
         }
 
+
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            // during the form load, hide all the error messages
+            txtuserNameErr.Hide();
+            txtPasswordErr.Hide();
+        }
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -72,8 +81,8 @@ namespace GymManagementSystem
                     // if yes is chosen then redirect to the home form
                     if (result == DialogResult.OK)
                     {
-                        HomeForm homeForm = new HomeForm();
-                        homeForm.Show();
+                        LoginForm loginForm = new LoginForm();
+                        loginForm.Show();
                         this.Hide();
                     }
                 }
@@ -86,13 +95,6 @@ namespace GymManagementSystem
 
                 }
             }
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-            // during the form load, hide all the error messages
-            txtuserNameErr.Hide();
-            txtPasswordErr.Hide();
         }
     }
 }

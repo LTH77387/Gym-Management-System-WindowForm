@@ -18,6 +18,7 @@ namespace GymManagementSystem
         public bool clickViewClass = false;
         public bool clickViewTrainer = false;
         public bool rowAdded = false;
+        public int userID, memberID;
         SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\Documents\\GymManagement.mdf;Integrated Security=True;Connect Timeout=30");
         public HomeForm()
         {
@@ -36,6 +37,9 @@ namespace GymManagementSystem
             txtSearch.Hide();
             btnEnroll.Visible = false;
             btnSearch.Visible = false;
+
+            // auto focus on Home tab
+            linkLabel1_LinkClicked(linkLabel1, new LinkLabelLinkClickedEventArgs(linkLabel1.Links[0])); // Simulate click event
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -80,6 +84,7 @@ namespace GymManagementSystem
             txtSearch.Text = string.Empty;
             txtSearch.Hide();
             btnSearch.Visible = false;
+            btnEnroll.Visible = false;
         }
 
         private void linkTrainer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -203,5 +208,54 @@ namespace GymManagementSystem
             userEnrollmentForm.Show();
             this.Hide();
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                // get the login user id first
+                this.userID = LoginClass.UserID;
+
+                // check that user id exists in Members table or not
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Member_ID FROM Members WHERE Members.User_ID=@userID", conn);
+                cmd.Parameters.AddWithValue("@userID", this.userID);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                conn.Close();
+                if (dataTable.Rows.Count > 0)
+                {
+                    // the current user is the member of the gym so that he can access the enrollment history
+                    this.memberID = Convert.ToInt32(dataTable.Rows[0]["Member_ID"]);
+                    conn.Open();
+                    SqlCommand sql = new SqlCommand("SELECT Classes.Title AS Class_Title, Classes.Category, Classes.Start_Date, Classes.End_Date, Members.Name AS Member_Name, Trainers.Trainer_Name, Trainers.Phone_Number AS Trainer_Phone_Number FROM Enrollments INNER JOIN Classes ON Enrollments.Class_ID=Classes.Class_ID INNER JOIN Members ON Enrollments.Member_ID=Members.Member_ID INNER JOIN Trainers ON Enrollments.Trainer_ID=Trainers.Trainer_ID WHERE Enrollments.Member_ID=@memberID", conn);
+                    sql.Parameters.AddWithValue("@memberID", this.memberID);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql);
+                    DataTable dataTable2 = new DataTable();
+                    sqlDataAdapter.Fill(dataTable2);
+                    conn.Close();
+                    if (dataTable2.Rows.Count > 0)
+                    {
+                        dataGridView1.Hide();
+                        dataGridView1.DataSource = dataTable2;
+                        dataGridView1.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No enrollments found!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Not a Member. Register first.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

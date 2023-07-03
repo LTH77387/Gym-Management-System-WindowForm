@@ -102,5 +102,18 @@ namespace GymManagementSystem
             txtUserNameErr.Hide();
             txtPasswordErr.Hide();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                // set the password char to default when user clicks edit profile
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*'; // set password char to *
+            }
+        }
     }
 }

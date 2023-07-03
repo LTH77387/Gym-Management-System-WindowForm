@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainerManagementForm));
             dataGridView1 = new DataGridView();
             button1 = new Button();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnSearch = new FontAwesome.Sharp.IconButton();
+            txtSearch = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -47,14 +51,14 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1900, 624);
+            dataGridView1.Size = new Size(1886, 624);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
             button1.BackColor = Color.LightSlateGray;
-            button1.Location = new Point(12, 38);
+            button1.Location = new Point(1754, 35);
             button1.Name = "button1";
             button1.Size = new Size(144, 52);
             button1.TabIndex = 1;
@@ -62,11 +66,57 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // iconButton1
+            // 
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(12, 35);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(100, 44);
+            iconButton1.TabIndex = 90;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.LightSlateGray;
+            btnSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            btnSearch.IconColor = Color.Black;
+            btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSearch.Location = new Point(1478, 35);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(80, 47);
+            btnSearch.TabIndex = 94;
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(1255, 45);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(200, 27);
+            txtSearch.TabIndex = 93;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(712, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(341, 40);
+            label1.TabIndex = 95;
+            label1.Text = "Trainer Management";
+            // 
             // TrainerManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(label1);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
+            Controls.Add(iconButton1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -76,11 +126,16 @@
             Load += TrainerManagementForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dataGridView1;
         private Button button1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private TextBox txtSearch;
+        private Label label1;
     }
 }

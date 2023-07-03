@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberManagementForm));
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            txtSearch = new TextBox();
+            btnSearch = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -63,11 +66,46 @@
             label1.TabIndex = 10;
             label1.Text = "Member Management";
             // 
+            // iconButton1
+            // 
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(14, 46);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(100, 44);
+            iconButton1.TabIndex = 90;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(1598, 53);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(200, 27);
+            txtSearch.TabIndex = 91;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.LightSlateGray;
+            btnSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            btnSearch.IconColor = Color.Black;
+            btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSearch.Location = new Point(1821, 43);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(80, 47);
+            btnSearch.TabIndex = 92;
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // MemberManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
+            Controls.Add(iconButton1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -84,5 +122,9 @@
 
         private DataGridView dataGridView1;
         private Label label1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private TextBox txtUserName;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private TextBox txtSearch;
     }
 }

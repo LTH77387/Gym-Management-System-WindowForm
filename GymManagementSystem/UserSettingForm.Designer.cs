@@ -42,7 +42,9 @@
             btnUpdate = new Button();
             txtPasswordErr = new Label();
             txtUserNameErr = new Label();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -119,7 +121,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(829, 332);
+            label3.Location = new Point(829, 423);
             label3.Name = "label3";
             label3.Size = new Size(73, 20);
             label3.TabIndex = 75;
@@ -128,7 +130,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(829, 227);
+            label2.Location = new Point(829, 318);
             label2.Name = "label2";
             label2.Size = new Size(89, 20);
             label2.TabIndex = 74;
@@ -136,7 +138,7 @@
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(968, 224);
+            txtUserName.Location = new Point(968, 315);
             txtUserName.Name = "txtUserName";
             txtUserName.ReadOnly = true;
             txtUserName.Size = new Size(200, 27);
@@ -144,7 +146,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(968, 329);
+            txtPassword.Location = new Point(968, 420);
             txtPassword.Name = "txtPassword";
             txtPassword.ReadOnly = true;
             txtPassword.Size = new Size(200, 27);
@@ -153,7 +155,7 @@
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.LightSlateGray;
-            btnUpdate.Location = new Point(1068, 433);
+            btnUpdate.Location = new Point(1068, 524);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(100, 44);
             btnUpdate.TabIndex = 78;
@@ -166,7 +168,7 @@
             txtPasswordErr.AutoSize = true;
             txtPasswordErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtPasswordErr.ForeColor = Color.Red;
-            txtPasswordErr.Location = new Point(968, 382);
+            txtPasswordErr.Location = new Point(968, 473);
             txtPasswordErr.Name = "txtPasswordErr";
             txtPasswordErr.Size = new Size(52, 17);
             txtPasswordErr.TabIndex = 80;
@@ -177,17 +179,28 @@
             txtUserNameErr.AutoSize = true;
             txtUserNameErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtUserNameErr.ForeColor = Color.Red;
-            txtUserNameErr.Location = new Point(968, 271);
+            txtUserNameErr.Location = new Point(968, 362);
             txtUserNameErr.Name = "txtUserNameErr";
             txtUserNameErr.Size = new Size(52, 17);
             txtUserNameErr.TabIndex = 79;
             txtUserNameErr.Text = "label4";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.user_avatar2;
+            pictureBox1.Location = new Point(968, 147);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(128, 128);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 81;
+            pictureBox1.TabStop = false;
             // 
             // UserSettingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(pictureBox1);
             Controls.Add(txtPasswordErr);
             Controls.Add(txtUserNameErr);
             Controls.Add(btnUpdate);
@@ -204,6 +217,7 @@
             Load += UserSettingForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -226,5 +240,6 @@
         private Label txtPasswordErr;
         private Label txtUserNameErr;
         private LinkLabel linkLogout;
+        private PictureBox pictureBox1;
     }
 }

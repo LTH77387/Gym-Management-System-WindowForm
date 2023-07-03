@@ -16,15 +16,17 @@ namespace GymManagementSystem
     public partial class EditMemberForm : Form
     {
         public int MemberID;
-        public string name, email, password, address, joinDate;
-        public EditMemberForm(int memberID, string name, string email, string password, string address, string joinDate)
+        public string name, email, address, joinDate;
+        public double weight, height;
+        public EditMemberForm(int memberID, string name, string email, string address, double weight, double height, string joinDate)
         {
             InitializeComponent();
             this.MemberID = memberID;
             this.name = name;
             this.email = email;
-            this.password = password;
             this.address = address;
+            this.weight = weight;
+            this.height = height;
             this.joinDate = joinDate;
         }
 
@@ -45,14 +47,16 @@ namespace GymManagementSystem
             // hide all the error messages
             txtNameErr.Hide();
             txtEmailErr.Hide();
-            txtPasswordErr.Hide();
             txtAddressErr.Hide();
             dtpJoinDateErr.Hide();
+            txtWeightErr.Hide();
+            txtHeightErr.Hide();
             // initialize data into each text box
             txtName.Text = this.name;
             txtEmail.Text = this.email;
-            txtPassword.Text = this.password;
             txtAddress.Text = this.address;
+            txtWeight.Text = this.weight.ToString();
+            txtHeight.Text = this.height.ToString();
             dtpJoinDate.Value = DateTime.Parse(this.joinDate);
         }
 
@@ -69,17 +73,12 @@ namespace GymManagementSystem
                 txtEmailErr.Text = "Email cannot be empty.";
                 txtEmailErr.Show();
             }
-            if (txtPassword.Text == "")
-            {
-                txtPasswordErr.Text = "Password cannot be empty.";
-                txtPasswordErr.Show();
-            }
             if (txtAddress.Text == "")
             {
                 txtAddressErr.Text = "Address cannot be empty.";
                 txtAddressErr.Show();
             }
-            if (txtName.Text != "" && txtEmail.Text != "" && txtPassword.Text != "" && txtAddress.Text != "")
+            if (txtName.Text != "" && txtEmail.Text != "" && txtAddress.Text != "")
             {
                 try
                 {

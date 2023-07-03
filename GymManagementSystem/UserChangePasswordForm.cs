@@ -84,39 +84,39 @@ namespace GymManagementSystem
                         this.oldPassword = oldPassword;
                     }
                     // check if the old password that user enters is the same as the password in the database
-                    if(txtOldPassword.Text == this.oldPassword)
+                    if (txtOldPassword.Text == this.oldPassword)
                     {
-                       // MessageBox.Show("Yep your password is the same!");
+                        // MessageBox.Show("Yep your password is the same!");
 
-                       //  check if the new password and confirm password that user enters are the same
-                        if(txtNewPassword.Text == txtConfirmPassword.Text)
+                        //  check if the new password and confirm password that user enters are the same
+                        if (txtNewPassword.Text == txtConfirmPassword.Text)
                         {
-                        //MessageBox.Show("Nice! New Password and Confirm Password are the same!");
-                        // change password  case
-                        try
-                        {
-                            conn.Open();
-                            SqlCommand sql = new SqlCommand("UPDATE Users SET Password=@confirmPassword WHERE User_ID=@userID", conn);
-                            sql.Parameters.AddWithValue("@confirmPassword", txtConfirmPassword.Text);
-                            sql.Parameters.AddWithValue("@userID", this.userID);
-                            sql.ExecuteNonQuery();
-                            conn.Close();
-                            DialogResult result = MessageBox.Show("Password Changed!","Success!",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if(result == DialogResult.OK)
+                            //MessageBox.Show("Nice! New Password and Confirm Password are the same!");
+                            // change password  case
+                            try
                             {
-                                UserSettingForm userSettingForm = new UserSettingForm();
-                                userSettingForm.Show();
-                                this.Hide();
+                                conn.Open();
+                                SqlCommand sql = new SqlCommand("UPDATE Users SET Password=@confirmPassword WHERE User_ID=@userID", conn);
+                                sql.Parameters.AddWithValue("@confirmPassword", txtConfirmPassword.Text);
+                                sql.Parameters.AddWithValue("@userID", this.userID);
+                                sql.ExecuteNonQuery();
+                                conn.Close();
+                                DialogResult result = MessageBox.Show("Password Changed!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (result == DialogResult.OK)
+                                {
+                                    UserSettingForm userSettingForm = new UserSettingForm();
+                                    userSettingForm.Show();
+                                    this.Hide();
+                                }
                             }
-                        }
-                        catch(Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
                         }
                         else
                         {
-                        MessageBox.Show("New Password and Confirm Password must be the same.Try again...");
+                            MessageBox.Show("New Password and Confirm Password must be the same.Try again...");
                         }
                     }
                     else

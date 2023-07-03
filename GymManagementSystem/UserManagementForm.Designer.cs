@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagementForm));
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnSearch = new FontAwesome.Sharp.IconButton();
+            txtSearch = new TextBox();
+            label2 = new Label();
+            rdbAdmin = new RadioButton();
+            rdbUser = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +53,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1896, 641);
+            dataGridView1.Size = new Size(1885, 641);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -55,17 +61,89 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(780, 38);
+            label1.Location = new Point(755, 38);
             label1.Name = "label1";
             label1.Size = new Size(294, 40);
             label1.TabIndex = 9;
             label1.Text = "User Management";
+            // 
+            // iconButton1
+            // 
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(16, 41);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(100, 44);
+            iconButton1.TabIndex = 90;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.LightSlateGray;
+            btnSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            btnSearch.IconColor = Color.Black;
+            btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSearch.Location = new Point(1821, 41);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(80, 47);
+            btnSearch.TabIndex = 94;
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(1598, 51);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(200, 27);
+            txtSearch.TabIndex = 93;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Verdana", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(1152, 52);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 20);
+            label2.TabIndex = 97;
+            label2.Text = "Sort By: ";
+            // 
+            // rdbAdmin
+            // 
+            rdbAdmin.AutoSize = true;
+            rdbAdmin.Location = new Point(1272, 51);
+            rdbAdmin.Name = "rdbAdmin";
+            rdbAdmin.Size = new Size(72, 24);
+            rdbAdmin.TabIndex = 98;
+            rdbAdmin.TabStop = true;
+            rdbAdmin.Text = "admin";
+            rdbAdmin.UseVisualStyleBackColor = true;
+            rdbAdmin.CheckedChanged += rdbAdmin_CheckedChanged;
+            // 
+            // rdbUser
+            // 
+            rdbUser.AutoSize = true;
+            rdbUser.Location = new Point(1377, 52);
+            rdbUser.Name = "rdbUser";
+            rdbUser.Size = new Size(57, 24);
+            rdbUser.TabIndex = 99;
+            rdbUser.TabStop = true;
+            rdbUser.Text = "user";
+            rdbUser.UseVisualStyleBackColor = true;
+            rdbUser.CheckedChanged += rdbUser_CheckedChanged;
             // 
             // UserManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(rdbUser);
+            Controls.Add(rdbAdmin);
+            Controls.Add(label2);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
+            Controls.Add(iconButton1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -82,5 +160,11 @@
 
         private DataGridView dataGridView1;
         private Label label1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private TextBox txtSearch;
+        private Label label2;
+        private RadioButton rdbAdmin;
+        private RadioButton rdbUser;
     }
 }

@@ -41,6 +41,8 @@
             label6 = new Label();
             txtConfirmPassword = new TextBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -58,7 +60,7 @@
             txtOldPasswordErr.AutoSize = true;
             txtOldPasswordErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtOldPasswordErr.ForeColor = Color.Red;
-            txtOldPasswordErr.Location = new Point(992, 267);
+            txtOldPasswordErr.Location = new Point(996, 377);
             txtOldPasswordErr.Name = "txtOldPasswordErr";
             txtOldPasswordErr.Size = new Size(52, 17);
             txtOldPasswordErr.TabIndex = 77;
@@ -67,7 +69,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(840, 217);
+            label3.Location = new Point(844, 327);
             label3.Name = "label3";
             label3.Size = new Size(105, 20);
             label3.TabIndex = 75;
@@ -75,7 +77,7 @@
             // 
             // txtOldPassword
             // 
-            txtOldPassword.Location = new Point(992, 214);
+            txtOldPassword.Location = new Point(996, 324);
             txtOldPassword.Name = "txtOldPassword";
             txtOldPassword.Size = new Size(200, 27);
             txtOldPassword.TabIndex = 74;
@@ -83,7 +85,7 @@
             // btnUpdate
             // 
             btnUpdate.BackColor = Color.LightSlateGray;
-            btnUpdate.Location = new Point(1092, 588);
+            btnUpdate.Location = new Point(1096, 698);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(100, 44);
             btnUpdate.TabIndex = 80;
@@ -96,7 +98,7 @@
             txtNewPasswordErr.AutoSize = true;
             txtNewPasswordErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtNewPasswordErr.ForeColor = Color.Red;
-            txtNewPasswordErr.Location = new Point(992, 391);
+            txtNewPasswordErr.Location = new Point(996, 501);
             txtNewPasswordErr.Name = "txtNewPasswordErr";
             txtNewPasswordErr.Size = new Size(52, 17);
             txtNewPasswordErr.TabIndex = 83;
@@ -105,7 +107,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(840, 341);
+            label4.Location = new Point(844, 451);
             label4.Name = "label4";
             label4.Size = new Size(111, 20);
             label4.TabIndex = 82;
@@ -113,7 +115,7 @@
             // 
             // txtNewPassword
             // 
-            txtNewPassword.Location = new Point(992, 338);
+            txtNewPassword.Location = new Point(996, 448);
             txtNewPassword.Name = "txtNewPassword";
             txtNewPassword.Size = new Size(200, 27);
             txtNewPassword.TabIndex = 81;
@@ -123,7 +125,7 @@
             txtConfirmPasswordErr.AutoSize = true;
             txtConfirmPasswordErr.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtConfirmPasswordErr.ForeColor = Color.Red;
-            txtConfirmPasswordErr.Location = new Point(992, 518);
+            txtConfirmPasswordErr.Location = new Point(996, 628);
             txtConfirmPasswordErr.Name = "txtConfirmPasswordErr";
             txtConfirmPasswordErr.Size = new Size(52, 17);
             txtConfirmPasswordErr.TabIndex = 86;
@@ -132,7 +134,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(840, 468);
+            label6.Location = new Point(844, 578);
             label6.Name = "label6";
             label6.Size = new Size(134, 20);
             label6.TabIndex = 85;
@@ -140,7 +142,7 @@
             // 
             // txtConfirmPassword
             // 
-            txtConfirmPassword.Location = new Point(992, 465);
+            txtConfirmPassword.Location = new Point(996, 575);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Size = new Size(200, 27);
             txtConfirmPassword.TabIndex = 84;
@@ -157,11 +159,22 @@
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.user_avatar2;
+            pictureBox1.Location = new Point(967, 159);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(128, 128);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 88;
+            pictureBox1.TabStop = false;
+            // 
             // UserChangePasswordForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(pictureBox1);
             Controls.Add(iconButton1);
             Controls.Add(txtConfirmPasswordErr);
             Controls.Add(label6);
@@ -179,6 +192,7 @@
             Text = "UserChangePasswordForm";
             FormClosed += UserChangePasswordForm_FormClosed;
             Load += UserChangePasswordForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,5 +211,6 @@
         private Label label6;
         private TextBox txtConfirmPassword;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private PictureBox pictureBox1;
     }
 }

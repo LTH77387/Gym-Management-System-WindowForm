@@ -139,5 +139,37 @@ namespace GymManagementSystem
                 }
             }
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm mainMenuForm = new MainMenuForm();
+            mainMenuForm.Show();
+            this.Hide();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text != "")
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Trainers WHERE Trainer_Name LIKE '%' +@search+ '%' ", conn);
+                    cmd.Parameters.AddWithValue("@search", txtSearch.Text);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    conn.Close();
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dataTable;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

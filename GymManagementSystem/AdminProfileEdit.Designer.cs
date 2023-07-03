@@ -37,6 +37,7 @@
             btnUpdate = new Button();
             txtUserNameErr = new Label();
             txtPasswordErr = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // txtUserName
@@ -114,11 +115,24 @@
             txtPasswordErr.TabIndex = 60;
             txtPasswordErr.Text = "label5";
             // 
+            // iconButton1
+            // 
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(825, 51);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(100, 44);
+            iconButton1.TabIndex = 90;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
             // AdminProfileEdit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(iconButton1);
             Controls.Add(txtPasswordErr);
             Controls.Add(txtUserNameErr);
             Controls.Add(btnUpdate);
@@ -145,5 +159,6 @@
         private Button btnUpdate;
         private Label txtUserNameErr;
         private Label txtPasswordErr;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

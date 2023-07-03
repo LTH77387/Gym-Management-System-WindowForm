@@ -73,22 +73,23 @@ namespace GymManagementSystem
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 8)
             {
                 // edit case
                 int memberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                string name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string email = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string password = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string name = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string email = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string address = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                string joinDate = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                double weight = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                double height = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+                string joinDate = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
 
                 // redirect to member edit form
-                EditMemberForm editMemberForm = new EditMemberForm(memberID, name, email, password, address, joinDate);
+                EditMemberForm editMemberForm = new EditMemberForm(memberID, name, email, address, weight, height, joinDate);
                 editMemberForm.Show();
                 this.Hide();
             }
-            else if (e.ColumnIndex == 7)
+            else if (e.ColumnIndex == 9)
             {
                 // delete case
                 int memberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -110,6 +111,39 @@ namespace GymManagementSystem
                 if (result1 == DialogResult.OK)
                 {
                     fetchMemberData("DeleteForm"); // call the fetch method again in order to view the updated data
+                }
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm mainMenuForm = new MainMenuForm();
+            mainMenuForm.Show();
+            this.Hide();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // if search txt box is not empty then process
+            if(txtSearch.Text != "")
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Members WHERE Name LIKE '%' + @search + '%' ", conn);
+                    cmd.Parameters.AddWithValue("@search", txtSearch.Text);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    conn.Close();
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dataTable;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

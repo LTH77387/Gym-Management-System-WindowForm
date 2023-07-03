@@ -37,7 +37,9 @@
             enrollmentManagementToolStripMenuItem = new ToolStripMenuItem();
             userManagementToolStripMenuItem = new ToolStripMenuItem();
             profileToolStripMenuItem = new ToolStripMenuItem();
+            pictureBox2 = new PictureBox();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // iconSplitButton1
@@ -104,12 +106,23 @@
             profileToolStripMenuItem.Text = "Profile";
             profileToolStripMenuItem.Click += profileToolStripMenuItem_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.SwiftGym036_sr;
+            pictureBox2.Location = new Point(2, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1920, 1030);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 37;
+            pictureBox2.TabStop = false;
+            // 
             // MainMenuForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
             Controls.Add(menuStrip1);
+            Controls.Add(pictureBox2);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "MainMenuForm";
@@ -118,6 +131,7 @@
             Load += MainMenuForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -131,5 +145,6 @@
         private ToolStripMenuItem enrollmentManagementToolStripMenuItem;
         private ToolStripMenuItem userManagementToolStripMenuItem;
         private ToolStripMenuItem profileToolStripMenuItem;
+        private PictureBox pictureBox2;
     }
 }
