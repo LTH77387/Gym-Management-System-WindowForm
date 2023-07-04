@@ -37,6 +37,7 @@
             label2 = new Label();
             rdbAdmin = new RadioButton();
             rdbUser = new RadioButton();
+            btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -85,7 +86,7 @@
             btnSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             btnSearch.IconColor = Color.Black;
             btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSearch.Location = new Point(1821, 41);
+            btnSearch.Location = new Point(1695, 41);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(80, 47);
             btnSearch.TabIndex = 94;
@@ -94,7 +95,7 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(1598, 51);
+            txtSearch.Location = new Point(1472, 51);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(200, 27);
             txtSearch.TabIndex = 93;
@@ -133,11 +134,23 @@
             rdbUser.UseVisualStyleBackColor = true;
             rdbUser.CheckedChanged += rdbUser_CheckedChanged;
             // 
+            // btnRefresh
+            // 
+            btnRefresh.BackColor = Color.LightSlateGray;
+            btnRefresh.Location = new Point(1801, 42);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(100, 44);
+            btnRefresh.TabIndex = 100;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
             // UserManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(btnRefresh);
             Controls.Add(rdbUser);
             Controls.Add(rdbAdmin);
             Controls.Add(label2);
@@ -166,5 +179,6 @@
         private Label label2;
         private RadioButton rdbAdmin;
         private RadioButton rdbUser;
+        private Button btnRefresh;
     }
 }

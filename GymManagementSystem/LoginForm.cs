@@ -115,5 +115,12 @@ namespace GymManagementSystem
                 txtPassword.PasswordChar = '*'; // set password char to *
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
+        }
     }
 }

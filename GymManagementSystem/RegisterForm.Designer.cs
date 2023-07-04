@@ -98,12 +98,13 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.Location = new Point(505, 385);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(178, 20);
+            linkLabel1.Size = new Size(192, 17);
             linkLabel1.TabIndex = 38;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "Already have an account?";
+            linkLabel1.Text = "Already have an account? Login";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // btnRegister

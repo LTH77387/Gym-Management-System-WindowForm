@@ -35,6 +35,7 @@
             btnSearch = new FontAwesome.Sharp.IconButton();
             txtSearch = new TextBox();
             label1 = new Label();
+            btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // button1
             // 
             button1.BackColor = Color.LightSlateGray;
-            button1.Location = new Point(1757, 22);
+            button1.Location = new Point(167, 14);
             button1.Name = "button1";
             button1.Size = new Size(144, 52);
             button1.TabIndex = 2;
@@ -84,7 +85,7 @@
             btnSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             btnSearch.IconColor = Color.Black;
             btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSearch.Location = new Point(1435, 22);
+            btnSearch.Location = new Point(1686, 15);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(80, 47);
             btnSearch.TabIndex = 96;
@@ -93,7 +94,7 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(1212, 32);
+            txtSearch.Location = new Point(1463, 25);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(200, 27);
             txtSearch.TabIndex = 95;
@@ -108,11 +109,23 @@
             label1.TabIndex = 97;
             label1.Text = "Class Management";
             // 
+            // btnRefresh
+            // 
+            btnRefresh.BackColor = Color.LightSlateGray;
+            btnRefresh.Location = new Point(1801, 18);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(100, 44);
+            btnRefresh.TabIndex = 98;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
             // ClassManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(btnRefresh);
             Controls.Add(label1);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
@@ -137,5 +150,6 @@
         private FontAwesome.Sharp.IconButton btnSearch;
         private TextBox txtSearch;
         private Label label1;
+        private Button btnRefresh;
     }
 }

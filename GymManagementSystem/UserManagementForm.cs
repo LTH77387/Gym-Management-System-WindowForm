@@ -44,10 +44,14 @@ namespace GymManagementSystem
 
                 if (dataTable.Rows.Count > 0)
                 {
-                    dataGridView1.DataSource = dataTable;
 
-                    if (methodName == "FormLoad")
+                    if (methodName == "FormLoad" || methodName=="Refresh")
                     {
+                        if (methodName == "Refresh")
+                        {
+                            dataGridView1.Columns.Clear();
+                        }
+                        dataGridView1.DataSource = dataTable;
                         // Add columns to the DataGridView            
                         DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
                         editButtonColumn.Text = "Edit";
@@ -157,7 +161,25 @@ namespace GymManagementSystem
                     conn.Close();
                     if (dataTable.Rows.Count > 0)
                     {
+                        // Clear existing columns
+                        dataGridView1.Columns.Clear();
+
+                        // Set the data source
                         dataGridView1.DataSource = dataTable;
+
+                        // Add columns to the DataGridView            
+                        DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+                        editButtonColumn.Text = "Edit";
+                        editButtonColumn.UseColumnTextForButtonValue = true;
+                        // Set the button column's cell style to have a green background color
+                        editButtonColumn.DefaultCellStyle.BackColor = Color.Green;
+                        dataGridView1.Columns.Add(editButtonColumn);
+
+                        DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+                        deleteButtonColumn.Text = "Delete";
+                        deleteButtonColumn.UseColumnTextForButtonValue = true;
+                        deleteButtonColumn.DefaultCellStyle.BackColor = Color.Red;
+                        dataGridView1.Columns.Add(deleteButtonColumn);
                     }
                 }
                 catch (Exception ex)
@@ -195,7 +217,7 @@ namespace GymManagementSystem
 
         private void rdbUser_CheckedChanged(object sender, EventArgs e)
         {
-            if(rdbUser.Checked)
+            if (rdbUser.Checked)
             {
                 //search by the role user
                 try
@@ -212,11 +234,16 @@ namespace GymManagementSystem
                         dataGridView1.DataSource = dataTable;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            fetchUserData("Refresh");
         }
     }
 }

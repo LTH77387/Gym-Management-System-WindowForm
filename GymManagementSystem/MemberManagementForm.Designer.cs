@@ -34,6 +34,7 @@
             iconButton1 = new FontAwesome.Sharp.IconButton();
             txtSearch = new TextBox();
             btnSearch = new FontAwesome.Sharp.IconButton();
+            btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -98,11 +99,23 @@
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
             // 
+            // btnRefresh
+            // 
+            btnRefresh.BackColor = Color.LightSlateGray;
+            btnRefresh.Location = new Point(1422, 46);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(100, 44);
+            btnRefresh.TabIndex = 93;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
             // MemberManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(btnRefresh);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(iconButton1);
@@ -126,5 +139,6 @@
         private TextBox txtUserName;
         private FontAwesome.Sharp.IconButton btnSearch;
         private TextBox txtSearch;
+        private Button btnRefresh;
     }
 }

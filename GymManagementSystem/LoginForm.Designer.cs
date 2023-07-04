@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             groupBox1 = new GroupBox();
+            linkLabel1 = new LinkLabel();
             checkBox1 = new CheckBox();
             btnLogin = new Button();
             txtPasswordErr = new Label();
@@ -47,6 +48,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ScrollBar;
+            groupBox1.Controls.Add(linkLabel1);
             groupBox1.Controls.Add(checkBox1);
             groupBox1.Controls.Add(btnLogin);
             groupBox1.Controls.Add(txtPasswordErr);
@@ -61,6 +63,18 @@
             groupBox1.Size = new Size(721, 526);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel1.Location = new Point(292, 388);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(91, 17);
+            linkLabel1.TabIndex = 39;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Register Now!";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // checkBox1
             // 
@@ -99,7 +113,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(213, 74);
+            label1.Location = new Point(272, 68);
             label1.Name = "label1";
             label1.Size = new Size(230, 40);
             label1.TabIndex = 0;
@@ -190,5 +204,6 @@
         private Label label2;
         private PictureBox pictureBox1;
         private CheckBox checkBox1;
+        private LinkLabel linkLabel1;
     }
 }
